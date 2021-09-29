@@ -181,7 +181,7 @@ var vCard = (function () {
          * Logo
          * @type {object}
          */
-        logo: getPhoto(),
+        // logo: getPhoto(),
 
         /**
          * Middle name
@@ -223,7 +223,7 @@ var vCard = (function () {
          * Individual's photo
          * @type {object}
          */
-        photo: getPhoto(),
+        // photo: getPhoto(),
 
         /**
          * The role, occupation, or business category of the vCard object within an organization
