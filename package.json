@@ -6,9 +6,6 @@
   "dependencies": {
     "moment": "~2.13.0"
   },
-  "peerDependencies": {
-    "react-native-fs": "2.x"
-  },
   "devDependencies": {
     "mocha": "~2.5.3"
   },

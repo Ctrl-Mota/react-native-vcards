@@ -9,40 +9,40 @@
  * Represents a contact that can be imported into Outlook, iOS, Mac OS, Android devices, and more
  */
 var vCard = (function () {
+    //Fix: Remove react-native-fs por incompatibilidade com o EXPO 42
+//   var fs = require('react-native-fs');
 
-  var fs = require('react-native-fs');
+    // /**
+    //  * Get photo object for storing photos in vCards
+    //  */
+    // function getPhoto() {
+    //     return {
+    //         url: '',
+    //         mediaType: '',
+    //         base64: false,
 
-    /**
-     * Get photo object for storing photos in vCards
-     */
-    function getPhoto() {
-        return {
-            url: '',
-            mediaType: '',
-            base64: false,
+    //         /**
+    //          * Attach a photo from a URL
+    //          * @param  {string} url       URL where photo can be found
+    //          * @param  {string} mediaType Media type of photo (JPEG, PNG, GIF)
+    //          */
+    //         attachFromUrl: function(url, mediaType) {
+    //             this.url = url;
+    //             this.mediaType = mediaType;
+    //             this.base64 = false;
+    //         },
 
-            /**
-             * Attach a photo from a URL
-             * @param  {string} url       URL where photo can be found
-             * @param  {string} mediaType Media type of photo (JPEG, PNG, GIF)
-             */
-            attachFromUrl: function(url, mediaType) {
-                this.url = url;
-                this.mediaType = mediaType;
-                this.base64 = false;
-            },
-
-            /**
-             * Embed a photo from a file using base-64 encoding (not implemented yet)
-             * @param  {string} filename
-             */
-            embedFromFile: function(fileLocation) {
-              var imgData = fs.readFile(fileLocation);
-              this.url = imgData.toString('base64');
-              this.base64 = true;
-            }
-        };
-    }
+    //         /**
+    //          * Embed a photo from a file using base-64 encoding (not implemented yet)
+    //          * @param  {string} filename
+    //          */
+    //         embedFromFile: function(fileLocation) {
+    //           var imgData = fs.readFile(fileLocation);
+    //           this.url = imgData.toString('base64');
+    //           this.base64 = true;
+    //         }
+    //     };
+    // }
 
     /**
      * Get a mailing address to attach to a vCard.
@@ -306,16 +306,16 @@ var vCard = (function () {
             return vCardFormatter.getFormattedString(this);
         },
 
-        /**
-         * Save formatted vCard to file
-         * @param  {String} filename
-         */
-        saveToFile: function(filename) {
-            var vCardFormatter = require('./lib/vCardFormatter');
-            var contents = vCardFormatter.getFormattedString(this);
+        // /**
+        //  * Save formatted vCard to file
+        //  * @param  {String} filename
+        //  */
+        // saveToFile: function(filename) {
+        //     var vCardFormatter = require('./lib/vCardFormatter');
+        //     var contents = vCardFormatter.getFormattedString(this);
 
-            return fs.writeFile(filename, contents, 'utf8');
-        }
+        //     return fs.writeFile(filename, contents, 'utf8');
+        // }
     };
 });
 
